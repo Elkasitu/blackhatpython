@@ -19,13 +19,13 @@ def usage():
     print "BHP Net Tool"
     print
     print "Usage: netcat.py -t target_host -p port"
-    print "-l --listen                  - listen on [host]:[port] for
-                                          incoming connections"
-    print "-e --execute=file_to_run     - execute the given file upon
-                                          receiving a connection"
-    print "-c --command                 - initialize a command shell"
-    print "-u --upload=destination      - upon receiving connection upload a
-                                          file and write to [destination]"
+    print """-l --listen                  - listen on [host]:[port] for
+                                          incoming connections"""
+    print """-e --execute=file_to_run     - execute the given file upon
+                                          receiving a connection"""
+    print "-c --command                   - initialize a command shell"
+    print """-u --upload=destination      - upon receiving connection upload a
+                                          file and write to [destination]"""
     print
     print
     print "Examples: "
@@ -108,7 +108,7 @@ def run_command(command):
         output = subprocess.check_output(command, stderr=subprocess.STDOUT,
                                          shell=True)
     except:
-            output = "Failed to execute comman.\r\n"
+            output = "Failed to execute command.\r\n"
 
     # send the output back to the client
     return output
